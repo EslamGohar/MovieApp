@@ -13,6 +13,7 @@ import { first } from 'rxjs/operators';
 export class MovieDetailsComponent implements OnInit, OnDestroy {
 	movie: Movie | null = null;
 	movieVideos: MovieVideo[] = [];
+	similarMovies: Movie[] = [];
 	movieImages: MovieImages | null = null;
 	movieCredits: MovieCredits | null = null;
 
@@ -26,6 +27,7 @@ export class MovieDetailsComponent implements OnInit, OnDestroy {
 			this.getMovieVideos(id);
 			this.getMovieImages(id);
 			this.getMovieCredits(id);
+			this.getSimilarMovies(id);
 		});
 	}
 
@@ -54,6 +56,12 @@ export class MovieDetailsComponent implements OnInit, OnDestroy {
 	getMovieCredits(id: string) {
 		this.movieService.getMovieCredits(id).subscribe((credits) => {
 			this.movieCredits = credits;
+		});
+	}
+
+	getSimilarMovies(id: string) {
+		this.movieService.getSimilarMovies(id).subscribe((similarData) => {
+			this.similarMovies = similarData;
 		});
 	}
 }

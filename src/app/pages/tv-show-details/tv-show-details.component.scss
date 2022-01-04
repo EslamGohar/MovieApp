@@ -1,0 +1,65 @@
+@import '../../../styles/colors';
+
+// to use the style only inside the component (tabView)
+:host ::ng-deep {
+    .p-tabview-nav {
+        justify-content: center;
+
+        li {
+            .p-tabview-nav-link {
+                background-color: $bgColor;
+            }
+
+            &.p-highlight .p-tabview-nav-link {
+                background-color: $bgColor;
+            }
+        }
+    }
+}
+
+.poster {
+    max-width: 100%;
+    border: 2px solid $bgColor;
+    border-radius: 5px;
+}
+
+.overview {
+    line-height: 1.5;
+}
+
+.stat {
+    display: flex;
+    margin-bottom: 15px;
+
+    .label {
+        width: 150px;
+        font-weight: bold;
+    }
+
+    .value {
+        color: $primaryColor
+    }
+
+    >span {
+        color: $primaryColor;
+
+        &:not(:last-child):after {
+            content: '|';
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+    }
+}
+
+.actor {
+    padding: 10px;
+
+    img {
+        width: 100%;
+    }
+
+    &-name {
+        text-align: center;
+        margin: 10px 0;
+    }
+}

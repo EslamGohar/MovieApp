@@ -1,3 +1,5 @@
+import { Item } from '../components/item/item';
+
 export interface Movie {
 	adult: boolean;
 	backdrop_path: string;
@@ -10,6 +12,7 @@ export interface Movie {
 	poster_path: string;
 	release_date: string;
 	title: string;
+	name: string;
 	video: boolean;
 	vote_average: number;
 	vote_count: number;
@@ -53,3 +56,18 @@ export interface MovieCredits {
 		profile_path: string;
 	}[];
 }
+
+export const mapMovieToItem = (movie: Movie): Item => {
+	return {
+		id: movie.id,
+		title: movie.title,
+		name: movie.name,
+		poster_path: movie.poster_path,
+		vote_average: movie.vote_average,
+		backdrop_path: movie.backdrop_path,
+		vote_count: movie.vote_count,
+		release_date: movie.release_date,
+		overview: movie.overview
+		// routePath: '/movie/' + movie.id
+	};
+};
