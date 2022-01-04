@@ -11,7 +11,8 @@ exports.mapMovieToItem = function (movie) {
         backdrop_path: movie.backdrop_path,
         vote_count: movie.vote_count,
         release_date: movie.release_date,
-        overview: movie.overview
+        overview: movie.overview,
+        first_air_date: movie.release_date
         // routePath: '/movie/' + movie.id
     };
 };

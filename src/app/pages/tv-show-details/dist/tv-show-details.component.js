@@ -17,6 +17,7 @@ var TvShowDetailsComponent = /** @class */ (function () {
         this.tvShowVideos = [];
         this.tvShowImages = null;
         this.tvShowCredits = null;
+        this.similarTvshows = [];
         this.imagesSizes = images_sizes_1.IMAGES_SIZES;
     }
     TvShowDetailsComponent.prototype.ngOnInit = function () {
@@ -27,6 +28,7 @@ var TvShowDetailsComponent = /** @class */ (function () {
             _this.getTvShowVideos(id);
             _this.getTvShowImages(id);
             _this.getTvShowCredits(id);
+            _this.getSimilarTvshows(id);
         });
     };
     TvShowDetailsComponent.prototype.ngOnDestroy = function () {
@@ -54,6 +56,12 @@ var TvShowDetailsComponent = /** @class */ (function () {
         var _this = this;
         this.tvShowsService.getTvShowCredits(id).subscribe(function (tvShowCreditsData) {
             _this.tvShowCredits = tvShowCreditsData;
+        });
+    };
+    TvShowDetailsComponent.prototype.getSimilarTvshows = function (id) {
+        var _this = this;
+        this.tvShowsService.getTvShowSimilar(id).subscribe(function (similarData) {
+            _this.similarTvshows = similarData;
         });
     };
     TvShowDetailsComponent = __decorate([

@@ -11,7 +11,7 @@
                         <span class="rating"><span class="app-icon">star</span><span
                                 class="rating-value">{{item.vote_average}}</span>/10</span>
                         <span>{{ item.vote_count }} Reviews</span>
-                        <span>2021</span>
+                        <span>{{ item.release_date | date: 'yyyy' || item.first_air_date | date: 'yyyy'  }}</span>
                     </div>
                 </div>
                 <div class="desc mt-6">

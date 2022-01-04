@@ -20,6 +20,7 @@ export interface Movie {
 	runtime: number;
 	status: string;
 	genres: Genre[];
+	first_air_date: string;
 }
 
 export interface MovieDto {
@@ -67,7 +68,8 @@ export const mapMovieToItem = (movie: Movie): Item => {
 		backdrop_path: movie.backdrop_path,
 		vote_count: movie.vote_count,
 		release_date: movie.release_date,
-		overview: movie.overview
+		overview: movie.overview,
+		first_air_date: movie.release_date
 		// routePath: '/movie/' + movie.id
 	};
 };

@@ -45,7 +45,7 @@ export class TvshowsService {
 	getTvShowSimilar(id: string) {
 		return this.http.get<TvDto>(`${this.baseUrl}/tv/${id}/similar?api_key=${this.apiKey}`).pipe(
 			switchMap((res) => {
-				return of(res.results.slice(0, 12));
+				return of(res.results.slice(0, 5));
 			})
 		);
 	}

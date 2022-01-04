@@ -50,7 +50,8 @@ export const mapTvShowToItem = (tvShow: Tv): Item => {
 		backdrop_path: tvShow.backdrop_path,
 		vote_count: tvShow.vote_count,
 		release_date: tvShow.release_date,
-		overview: tvShow.overview
+		overview: tvShow.overview,
+		first_air_date: tvShow.first_air_date
 		// routePath: '/tvshow/' + tvShow.id
 	};
 };

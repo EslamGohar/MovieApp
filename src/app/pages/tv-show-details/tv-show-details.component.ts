@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Tv, TvShowCredits, TvShowImages, TvShowVideo } from '../../models/tvshow';
 import { IMAGES_SIZES } from '../../constants/images-sizes';
@@ -9,12 +9,14 @@ import { TvshowsService } from '../../services/tvshows.service';
 	templateUrl: './tv-show-details.component.html',
 	styleUrls: ['./tv-show-details.component.scss']
 })
-export class TvShowDetailsComponent implements OnInit {
+export class TvShowDetailsComponent implements OnInit, OnDestroy {
 	tvShow: Tv | null = null;
 	tvShowVideos: TvShowVideo[] = [];
 	tvShowImages: TvShowImages | null = null;
 	tvShowCredits: TvShowCredits | null = null;
-	imagesSizes = IMAGES_SIZES;
+	similarTvshows: Tv[] = [];
+
+	readonly imagesSizes = IMAGES_SIZES;
 
 	constructor(private route: ActivatedRoute, private tvShowsService: TvshowsService) {}
 
@@ -24,6 +26,7 @@ export class TvShowDetailsComponent implements OnInit {
 			this.getTvShowVideos(id);
 			this.getTvShowImages(id);
 			this.getTvShowCredits(id);
+			this.getSimilarTvshows(id);
 		});
 	}
 
@@ -52,6 +55,12 @@ export class TvShowDetailsComponent implements OnInit {
 	getTvShowCredits(id: string) {
 		this.tvShowsService.getTvShowCredits(id).subscribe((tvShowCreditsData) => {
 			this.tvShowCredits = tvShowCreditsData;
+		});
+	}
+
+	getSimilarTvshows(id: string) {
+		this.tvShowsService.getTvShowSimilar(id).subscribe((similarData) => {
+			this.similarTvshows = similarData;
 		});
 	}
 }

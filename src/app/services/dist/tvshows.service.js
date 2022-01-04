@@ -39,7 +39,7 @@ var TvshowsService = /** @class */ (function () {
     };
     TvshowsService.prototype.getTvShowSimilar = function (id) {
         return this.http.get(this.baseUrl + "/tv/" + id + "/similar?api_key=" + this.apiKey).pipe(operators_1.switchMap(function (res) {
-            return rxjs_1.of(res.results.slice(0, 12));
+            return rxjs_1.of(res.results.slice(0, 5));
         }));
     };
     TvshowsService.prototype.searchTvShows = function (page, searchValue) {
