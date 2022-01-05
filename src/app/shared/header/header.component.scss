@@ -6,7 +6,7 @@ header {
         align-items: center;
         justify-content: space-between;
         background-color: $bgColorLight;
-        height: 65px;
+        height: 70px;
         padding: 0.5rem 1rem;
         margin: 0;
         border-bottom: 1px solid rgba($color: #fff, $alpha: 0.1);
@@ -15,7 +15,8 @@ header {
             display: block;
 
             img {
-                width: 75px;
+                height: 80px;
+                margin-top: 10px;
             }
         }
 

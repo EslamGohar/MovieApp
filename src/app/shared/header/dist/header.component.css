@@ -1,0 +1,27 @@
+header .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #212121;
+  height: 70px;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+header .navbar-logo {
+  display: block;
+}
+header .navbar-logo img {
+  height: 80px;
+  margin-top: 10px;
+}
+header .navbar-links {
+  display: block;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+header .navbar-links li {
+  display: inline;
+  margin-right: 20px;
+}

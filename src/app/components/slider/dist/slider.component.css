@@ -1,0 +1,70 @@
+.slider {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 38rem;
+  position: relative;
+}
+.slider .slide {
+  position: absolute;
+  display: flex;
+  height: 38rem;
+  width: 100%;
+}
+.slider .slide-bg {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+}
+.slider .slide-bg:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  content: "";
+  background-image: linear-gradient(90deg, rgba(0, 3, 32, 0.9388130252) 1%, rgba(82, 12, 24, 0.9164040616) 19%, rgba(255, 255, 255, 0) 100%);
+}
+.slider .slide-bg-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.slider .slide-pane {
+  position: absolute;
+  width: 45%;
+  top: 5rem;
+  left: 5rem;
+}
+.slider .slide-pane .name {
+  font-size: 2.8rem;
+}
+.slider .slide-pane .meta {
+  font-size: 1.4rem;
+  color: #999;
+}
+.slider .slide-pane .meta .info {
+  display: flex;
+}
+.slider .slide-pane .meta .info > span:not(:last-child):after {
+  content: "|";
+  margin-right: 9px;
+  margin-left: 9px;
+}
+.slider .slide-pane .meta .info .rating {
+  display: flex;
+  align-items: center;
+}
+.slider .slide-pane .meta .info .rating .app-icon {
+  margin-right: 5px;
+  color: #e2bb3c;
+}
+.slider .slide-pane .meta .info .rating-value {
+  color: #fff;
+  font-weight: 400;
+}
+.slider .slide-pane .desc {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
