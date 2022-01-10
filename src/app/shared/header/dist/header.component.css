@@ -12,7 +12,7 @@ header .navbar-logo {
   display: block;
 }
 header .navbar-logo img {
-  height: 80px;
+  height: 175px;
   margin-top: 10px;
 }
 header .navbar-links {
@@ -23,5 +23,13 @@ header .navbar-links {
 }
 header .navbar-links li {
   display: inline;
-  margin-right: 20px;
+  margin-right: 23px;
+}
+header .navbar-links li a {
+  transition: all 0.5s ease 0s;
+}
+header .navbar-links li a:hover {
+  display: inline;
+  padding-bottom: 20px;
+  border-bottom: 0.5rem solid #64b5f6;
 }
