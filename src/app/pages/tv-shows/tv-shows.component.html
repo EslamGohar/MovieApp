@@ -3,8 +3,8 @@
         <div class="col-12">
             <div class="p-fluid">
                 <span class="p-input-icon-left">
-                    <i class="pi pi-search"></i>
-                    <input type="text" pInputText placeholder="Search" [(ngModel)]="searchValue"
+                    <i class="pi pi-search" (click)="searchChanged()"></i>
+                    <input type="text" pInputText placeholder="Search.." [(ngModel)]="searchValue"
                         (change)="searchChanged()" />
                 </span>
             </div>
